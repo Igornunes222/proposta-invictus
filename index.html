@@ -383,6 +383,153 @@ svg.linechart{width:100%;height:130px;overflow:visible}
   color:#111;font-size:.76rem;font-weight:900;
   background:linear-gradient(90deg,var(--gold-light),var(--gold));
 }
+
+/* MOBILE */
+@media (max-width: 860px){
+  html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
+  body{min-height:100svh}
+  .page{
+    min-height:100svh;
+    height:auto;
+    overflow:visible;
+  }
+  .nav{
+    height:auto;
+    min-height:58px;
+    padding:.55rem .8rem;
+    gap:.6rem;
+    align-items:center;
+  }
+  .brand{min-width:0;gap:.55rem}
+  .brand img{height:34px}
+  .brand-name{font-size:.82rem;line-height:1.15}
+  .brand-sub{font-size:.62rem;line-height:1.2}
+  .nav-tag{display:none}
+  .screens{
+    flex:unset;
+    min-height:calc(100svh - 112px);
+    overflow:visible;
+  }
+  .screen{
+    position:relative;
+    inset:auto;
+    min-height:calc(100svh - 112px);
+    padding:1rem .85rem 1.2rem;
+    overflow:visible;
+  }
+  .screen:not(.active){display:none}
+  h1{font-size:clamp(2rem,12vw,3rem);line-height:1.04}
+  h2{font-size:clamp(1.45rem,8vw,2.1rem);line-height:1.12}
+  p{font-size:.9rem}
+  .cover{
+    min-height:calc(100svh - 112px);
+    justify-content:flex-start;
+    padding:1.5rem 0 1rem;
+  }
+  .cover h1{margin-bottom:.85rem}
+  .cover .sub{font-size:.9rem;margin-bottom:1.35rem}
+  .cover-actions{
+    grid-template-columns:1fr;
+    max-width:440px;
+    gap:.55rem;
+  }
+  .cover-actions .btn{
+    min-height:50px;
+    align-items:flex-start;
+    padding:.6rem .85rem;
+    text-align:left;
+  }
+  .overview-grid,
+  .metrics-row,
+  .mkt-grid,
+  .impact-stats{
+    grid-template-columns:1fr !important;
+  }
+  .ov-card{padding:.85rem}
+  .ov-card .ov-icon{width:34px;height:34px;margin-bottom:.65rem}
+  .sector-layout{
+    grid-template-columns:1fr;
+    height:auto;
+    gap:.75rem;
+  }
+  .sector-menu{
+    display:flex;
+    gap:.45rem;
+    overflow-x:auto;
+    padding-bottom:.2rem;
+    scroll-snap-type:x proximity;
+  }
+  .sector-menu-item{
+    min-width:210px;
+    scroll-snap-align:start;
+  }
+  .sector-menu-item:hover,
+  .sector-menu-item.sel{transform:none}
+  .sector-detail{
+    max-height:none;
+    overflow:visible;
+    padding:1rem;
+  }
+  .impact-row,
+  .dash-grid,
+  .impact-detail{
+    grid-template-columns:1fr !important;
+  }
+  .dash-head{
+    display:grid;
+    gap:.8rem;
+    align-items:start;
+  }
+  .dash-tabs{
+    overflow-x:auto;
+    padding-bottom:.15rem;
+  }
+  .dash-tab{white-space:nowrap}
+  .panel-title{
+    align-items:flex-start;
+    gap:.5rem;
+  }
+  .rank-item{
+    grid-template-columns:28px minmax(0,1fr);
+  }
+  .rank-badge{
+    grid-column:2;
+    justify-self:start;
+  }
+  .bar-row{
+    grid-template-columns:minmax(76px,.8fr) 1fr 42px;
+    gap:.45rem;
+  }
+  .bar-row span,.bar-row b{font-size:.72rem}
+  .data-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+  .bottom-nav{
+    position:sticky;
+    bottom:0;
+    justify-content:flex-start;
+    overflow-x:auto;
+    gap:.35rem;
+    padding:.45rem .6rem max(.45rem, env(safe-area-inset-bottom));
+    z-index:10;
+  }
+  .bottom-nav button{
+    min-height:36px;
+    padding:0 .75rem;
+    flex:0 0 auto;
+    font-size:.72rem;
+  }
+}
+
+@media (max-width: 420px){
+  .screen{padding-inline:.7rem}
+  .eyebrow{font-size:.68rem}
+  .sector-menu-item{min-width:185px}
+  .metric-card strong{font-size:1.35rem}
+  .funnel-step{font-size:.68rem;padding:0 .35rem}
+}
 </style>
 </head>
 <body>
@@ -834,7 +981,7 @@ svg.linechart{width:100%;height:130px;overflow:visible}
         <h2>O que muda quando a IA entra em operação.</h2>
         <p>Os ganhos não vêm de contratar mais — vêm de aproveitar melhor o que já existe. Tempo recuperado, receita mantida e crescimento sem aumentar o custo fixo.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-top:1rem">
+      <div class="impact-stats" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-top:1rem">
         <div class="card" style="padding:1.1rem">
           <div class="eyebrow" style="margin-bottom:.5rem">Comercial</div>
           <div style="font-size:2rem;font-weight:800;color:var(--gold-light);line-height:1">+35%</div>
@@ -856,7 +1003,7 @@ svg.linechart{width:100%;height:130px;overflow:visible}
           <p style="font-size:.76rem;margin-top:.35rem">mais capacidade de produção de conteúdo com sugestões e roteiros de IA</p>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:.9rem;margin-top:.8rem">
+      <div class="impact-detail" style="display:grid;grid-template-columns:1.1fr .9fr;gap:.9rem;margin-top:.8rem">
         <div class="dash-panel">
           <div class="panel-title"><strong>Tempo recuperado por setor</strong><span>estimativa mensal</span></div>
           <div class="bar-list">
